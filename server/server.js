@@ -7,31 +7,17 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Test route
-app.get('/', (req, res) => {
-  res.send(' Hello from backend!');
-});
-
 // Connect to MongoDB
-if (!MONGO_URI) {
-  console.error('MONGO_URI not defined in .env file');
-  process.exit(1);
-}
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.log('MongoDB connection error:', err));
 
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => {
-  console.log(' MongoDB connected');
-  app.listen(PORT, () => {
-    console.log(` Server running at http://localhost:${PORT}`);
-  });
-})
-.catch((error) => {
-  console.error(' MongoDB connection error:', error);
-});
+// Routes
+app.use('/api/auth', require('./routes/auth'));
+
+app.get('/', (req, res) => res.send('API Running'));
+
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
