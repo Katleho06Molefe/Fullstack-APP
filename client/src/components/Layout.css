@@ -1,0 +1,16 @@
+.layout {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  color: white;
+}
+
+.content {
+  padding: 2rem;
+}

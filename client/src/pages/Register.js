@@ -35,7 +35,6 @@ const Register = () => {
       return;
     }
 
-    // TODO: Submit data to backend API
     console.log('Form submitted:', formData);
   };
 
