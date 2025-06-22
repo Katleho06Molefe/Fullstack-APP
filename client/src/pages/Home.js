@@ -1,22 +1,35 @@
-// client/src/pages/Home.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
-import bgImage from '../assets/WhatsApp Image 2025-06-22 at 00.00.03.webp';
+import bgImage from '../assets/background.jpeg';
+import { FaUser, FaShoppingCart, FaSearch } from 'react-icons/fa';
 
 const Home = () => {
   return (
     <div className="home-page" style={{ backgroundImage: `url(${bgImage})` }}>
-      <header className="home-header">
-        <div className="nav-left">
-          <span>Home</span>
+      <header className="navbar">
+        <div className="logo">
+          <Link to="/">Auckland <br></br> <span>Sliding Doors</span></Link>
         </div>
-        <div className="logo-section">
-          <p className="about-text">About</p>
-          <h1 className="logo-text">🅰️uckland <span className="subtext">Doors</span></h1>
-          <p className="login-text">Login</p>
+
+        <ul className="nav-links">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/Login">Shop</Link></li>
+          <li><Link to="/Login">Login</Link></li>
+          <li><Link to="/Register">Register</Link></li>
+        </ul>
+
+        <div className="nav-icons">
+          
+          <FaShoppingCart />
+          <Link to="/login"><FaUser /></Link>
         </div>
-        <p className="tagline">Auckland Doorices</p>
       </header>
+
+      <div className="home-content">
+        <h1 className="tagline">Welcome to Auckland Sliding Doors</h1>
+      </div>
     </div>
   );
 };
