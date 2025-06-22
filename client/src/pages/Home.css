@@ -1,0 +1,50 @@
+.home-page {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.home-header {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  text-align: center;
+}
+
+.nav-left {
+  text-align: left;
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: white;
+  color: black;
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.subtext {
+  font-size: 14px;
+  font-weight: lighter;
+  margin-left: 5px;
+}
+
+.about-text,
+.login-text {
+  font-weight: bold;
+}
+
+.tagline {
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+}
