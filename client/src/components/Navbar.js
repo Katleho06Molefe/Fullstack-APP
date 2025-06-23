@@ -5,7 +5,7 @@ import { FaUser, FaShoppingCart } from 'react-icons/fa';
 
 const Navbar = () => {
   const location = useLocation();
-  const hiddenOnPaths = ['/login', '/register', '/about'];
+  const hiddenOnPaths = ['/login', '/register', '/Services'];
   const hideShopAndCart = hiddenOnPaths.includes(location.pathname);
 
   return (
@@ -16,8 +16,9 @@ const Navbar = () => {
 
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        
         {!hideShopAndCart && <Link to="/shop">Shop</Link>}
+        <Link to="/Services">Services</Link>
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
       </div>
