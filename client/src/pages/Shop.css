@@ -1,0 +1,125 @@
+.shop-page {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 2rem;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.shop-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #000;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-card .category {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.product-card .price {
+  font-size: 1.2rem;
+  color: red;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.hover-icons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 6px;
+  border-radius: 4px;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+.image-wrapper:hover .hover-icons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-icons svg {
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  top: -25px;
+  left: -60px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.hover-icons:hover .tooltip {
+  opacity: 1;
+}
+
